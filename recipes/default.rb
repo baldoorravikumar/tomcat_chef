@@ -11,28 +11,28 @@ execute 'tomcat' do
  action :run
 end
 execute 'tomcat_chown' do
-command 'chown -R satishk:satishk apache-tomcat-7.0.88.tar.gz'
+command 'chown -R ravikumarreddy_bld:ravikumarreddy_bld apache-tomcat-7.0.88.tar.gz'
 action :run
 end
 execute 'tomcat_install' do
-command '/usr/bin/tar xvfz apache-tomcat-7.0.88.tar.gz -C /home/satishk'
+command '/usr/bin/tar xvfz apache-tomcat-7.0.88.tar.gz -C /home/ravikumarreddy_bld'
  action :run
 end
 execute 'rmove_tomcat' do
-command 'rm -rf /home/satishk/apache-tomcat-7.0.88/conf/tomcat-users.xml'
+command 'rm -rf /home/ravikumarreddy_bld/apache-tomcat-7.0.88/conf/tomcat-users.xml'
 action :run
 end
-file '/home/satishk/apache-tomcat-7.0.88/conf/tomcat-users.xml' do
+file '/home/ravikumarreddy_bld/apache-tomcat-7.0.88/conf/tomcat-users.xml' do
 content '<tomcat-users>
 <role rolename="manager-gui"/>
 <user username="tomcat" password="tomcat" roles="manager-gui"/>
 </tomcat-users>'
 end
 execute 'tomcat_chown' do
-command 'chown -R satishk:satishk /home/satishk/apache-tomcat-7.0.88'
+command 'chown -R ravikumarreddy_bld:ravikumarreddy_bld /home/satishk/apache-tomcat-7.0.88'
 action :run
 end
 execute 'tomcat_run' do
-command '/home/satishk/apache-tomcat-7.0.88/bin/startup.sh'
+command '/home/ravikumarreddy_bld/apache-tomcat-7.0.88/bin/startup.sh'
 action :run
 end
