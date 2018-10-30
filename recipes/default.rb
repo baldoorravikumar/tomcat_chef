@@ -29,7 +29,7 @@ content '<tomcat-users>
 </tomcat-users>'
 end
 execute 'tomcat_chown' do
-command 'chown -R ravikumarreddy_bld:ravikumarreddy_bld /home/satishk/apache-tomcat-7.0.88'
+command 'chown -R ravikumarreddy_bld:ravikumarreddy_bld /home/ravikumarreddy_bld/apache-tomcat-7.0.88'
 action :run
 end
 execute 'tomcat_run' do
